@@ -6,13 +6,8 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #434455;
     background-color: #ffffff;
+    font-family: var(--font-primary);
 }
 
 h1,
@@ -36,6 +31,19 @@ li,
 a {
     list-style-type: none;
     text-decoration: none;
+}
+
+a {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 4%;
+    font-style: normal;
+    color: #4d5ae5;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 img {
@@ -134,29 +142,26 @@ input {
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 40px;
 }
 
-a.logo-top {
-    margin-right: 76px;
+.logo-top {
     padding: 16px 0;
-    display: block;
-    font-family: "Raleway", sans-serif;
+    font-family: var(--font-secondary);
     font-weight: 700;
     font-size: 18px;
+    line-height: 117%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    line-height: 1.17;
     color: #4d5ae5;
 }
 
 .logo-part {
-    font-family: "Raleway", sans-serif;
+    font-family: var(--font-secondary);
     font-weight: 700;
     font-size: 18px;
+    line-height: 117%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    line-height: 1.17;
     color: #2e2f42;
 }
 
@@ -164,13 +169,15 @@ a.logo-top {
     display: none;
 }
 
-.nav-link {
-    font-family: "Roboto", sans-serif;
+.nav-item {
     font-weight: 500;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 150%;
     letter-spacing: 0.02em;
     color: #2e2f42;
+}
+
+.nav-link {
     display: block;
     padding: 24px 0;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -203,14 +210,7 @@ a.logo-top {
 }
 
 .contacts {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
     font-style: normal;
-    color: #434455;
-    margin-left: auto;
 }
 
 .address-list {
@@ -218,6 +218,11 @@ a.logo-top {
 }
 
 .address {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: 0.04em;
+    color: #434455;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -226,10 +231,30 @@ a.logo-top {
     color: #404bbf;
 }
 
+.mobile-menu-button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.mobile-menu-icon {
+    display: block;
+    fill: #2f2f37;
+}
+
 @media screen and (min-width: 768px) {
+    .mobile-menu-button {
+        display: none;
+    }
+
     .nav-list {
         display: flex;
         gap: 40px;
+    }
+
+    .logo-top {
+        padding: 24px 0;
+        margin-right: 120px;
     }
 
     .address-list {
@@ -237,27 +262,22 @@ a.logo-top {
         flex-direction: column;
         gap: 12px;
     }
-
-    a.logo-top {
-        padding: 24px 0;
-        margin-right: 120px;
-    }
 }
 
 @media screen and (min-width: 1158px) {
+    .logo-top {
+        margin-right: 76px;
+    }
+
     .address-list {
         flex-direction: row;
         gap: 40px;
     }
 
-    .contacts {
+    .address {
         font-size: 16px;
-        line-height: 1.5;
+        line-height: 150%;
         letter-spacing: 0.02em;
-    }
-
-    a.logo-top {
-        margin-right: 76px;
     }
 }
 
@@ -292,17 +312,6 @@ a.logo-top {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-.mobile-menu-button {
-    padding: 0;
-    border: none;
-    background-color: transparent;
-}
-
-.mobile-menu-icon {
-    display: block;
-    fill: #2f2f37;
 }
 
 .mobile-menu-close {
@@ -353,7 +362,6 @@ a.logo-top {
     line-height: 111%;
     letter-spacing: 0.02em;
     color: #2e2f42;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-nav-links:hover,
@@ -377,7 +385,6 @@ a.logo-top {
     line-height: 120%;
     letter-spacing: 0.02em;
     color: #434455;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-contact-info:hover,
@@ -387,18 +394,22 @@ a.logo-top {
 
 .list-socials-mobile {
     display: flex;
-    justify-content: space-between;
     gap: 40px;
 }
 
+.mobile-menu-icon-bg {
+    width: 40px;
+    height: 40px;
+}
+
 .mobile-menu-socials {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #4d5ae5;
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
+    background-color: #4d5ae5;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -407,14 +418,7 @@ a.logo-top {
     background-color: #404bbf;
 }
 
-.mobile-menu-icon-bg {
-    width: 40px;
-    height: 40px;
-}
-
 @media screen and (min-width: 768px) {
-
-    .mobile-menu-button,
     .mobile-menu {
         display: none;
     }
@@ -444,11 +448,10 @@ a.logo-top {
     }
 }
 
-h1.starter-text {
-    font-family: "Roboto", sans-serif;
+.starter-text {
     font-weight: 700;
     font-size: 36px;
-    line-height: 1.07;
+    line-height: 107%;
     letter-spacing: 0.02em;
     color: #ffffff;
     text-align: center;
@@ -458,23 +461,20 @@ h1.starter-text {
 }
 
 .button {
-    font-family: "Roboto", sans-serif;
+    background-color: #4d5ae5;
+    color: #ffffff;
     font-weight: 500;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 150%;
     letter-spacing: 0.04em;
-    color: #ffffff;
-    background-color: #4d5ae5;
-    text-align: center;
-    cursor: pointer;
-    display: block;
-    padding: 16px 32px;
-    border: none;
     border-radius: 4px;
+    border: none;
+    padding: 16px 32px;
     min-width: 169px;
     height: 56px;
-    margin: 0 auto;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 0 auto;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -498,8 +498,9 @@ h1.starter-text {
         }
     }
 
-    h1.starter-text {
+    .starter-text {
         font-size: 56px;
+        line-height: 107%;
         max-width: 496px;
         margin-bottom: 36px;
     }
@@ -515,12 +516,12 @@ h1.starter-text {
 
     @media screen and (min-resolution: 192dpi) {
         .page-main {
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            background-image: linear-gradient(rgba房間, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
                 url(../images/people-office-desk@2x.jpg);
         }
     }
 
-    h1.starter-text {
+    .starter-text {
         margin-bottom: 48px;
     }
 }
@@ -546,13 +547,13 @@ h1.starter-text {
     overflow: hidden;
 }
 
-ul.advantages-list {
+.advantages-list {
     display: flex;
     flex-wrap: wrap;
     gap: 72px;
 }
 
-li.advantages-list-item {
+.advantages-list-item {
     width: 100%;
 }
 
@@ -560,11 +561,14 @@ li.advantages-list-item {
     display: none;
 }
 
+.advantages-container svg {
+    fill: #2e2f42;
+}
+
 .advantages-names {
-    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 36px;
-    line-height: 1.11;
+    line-height: 111%;
     letter-spacing: 0.02em;
     color: #2e2f42;
     text-align: center;
@@ -574,17 +578,17 @@ li.advantages-list-item {
 .info {
     font-weight: 500;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 150%;
     letter-spacing: 0.02em;
     color: #434455;
 }
 
 @media screen and (min-width: 768px) {
-    ul.advantages-list {
+    .advantages-list {
         gap: 72px 24px;
     }
 
-    li.advantages-list-item {
+    .advantages-list-item {
         width: calc((100% - 24px) / 2);
     }
 
@@ -598,11 +602,11 @@ li.advantages-list-item {
         padding: 120px 0;
     }
 
-    ul.advantages-list {
+    .advantages-list {
         gap: 24px;
     }
 
-    li.advantages-list-item {
+    .advantages-list-item {
         width: calc((100% - 72px) / 4);
     }
 
@@ -621,7 +625,7 @@ li.advantages-list-item {
     .advantages-names {
         font-weight: 500;
         font-size: 20px;
-        line-height: 1.2;
+        line-height: 120%;
     }
 
     .info {
@@ -639,12 +643,11 @@ li.advantages-list-item {
 }
 
 .team {
-    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 36px;
-    text-align: center;
+    line-height: 111%;
     letter-spacing: 0.02em;
-    line-height: 1.11;
+    text-align: center;
     text-transform: capitalize;
     color: #2e2f42;
     margin-bottom: 72px;
@@ -659,7 +662,6 @@ li.advantages-list-item {
 
 .team-list-item {
     background-color: #ffffff;
-    width: 100%;
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
@@ -671,10 +673,9 @@ li.advantages-list-item {
 }
 
 .team-names {
-    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 20px;
-    line-height: 1.2;
+    line-height: 120%;
     letter-spacing: 0.02em;
     color: #2e2f42;
     text-align: center;
@@ -682,6 +683,11 @@ li.advantages-list-item {
 }
 
 .info-team {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #434455;
     text-align: center;
     margin-bottom: 8px;
 }
@@ -730,28 +736,26 @@ li.advantages-list-item {
 }
 
 .portfolio {
-    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 36px;
+    line-height: 111%;
     letter-spacing: 0.02em;
     text-align: center;
-    line-height: 1.11;
     text-transform: capitalize;
     color: #2e2f42;
-    background-color: #ffffff;
     margin-bottom: 72px;
 }
 
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 24px;
-    row-gap: 48px;
+    gap: 48px;
 }
 
 .portfolio-list-item {
-    width: 100%;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-box {
@@ -761,7 +765,20 @@ li.advantages-list-item {
 }
 
 .portfolio-names {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
     margin-bottom: 8px;
+}
+
+.info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #434455;
 }
 
 .overlay {
@@ -773,26 +790,17 @@ li.advantages-list-item {
     display: none;
     position: absolute;
     top: 0;
-    padding: 40px 32px;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 150%;
     letter-spacing: 0.02em;
     color: #f4f4fd;
+    padding: 40px 32px;
     background-color: #4d5ae5;
-    width: 100%;
     height: 100%;
+    width: 100%;
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-list-item:hover {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-.portfolio-list-item:hover .overlay-text {
-    transform: translateY(0%);
 }
 
 @media screen and (min-width: 768px) {
@@ -816,10 +824,21 @@ li.advantages-list-item {
 
     .portfolio-list-item {
         width: calc((100% - 48px) / 3);
+        box-shadow: none;
+    }
+
+    .portfolio-list-item:hover {
+        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+            0px 1px 1px rgba(46, 47, 66, 0.16),
+            0px 2px 1px rgba(46, 47, 66, 0.08);
     }
 
     .overlay-text {
         display: block;
+    }
+
+    .portfolio-list-item:hover .overlay-text {
+        transform: translateY(0);
     }
 }
 
@@ -835,35 +854,33 @@ li.advantages-list-item {
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     gap: 72px;
+    justify-content: center;
 }
 
 .footer-left {
-    margin-right: 120px;
     text-align: center;
 }
 
 .logo-bottom {
-    font-family: "Raleway", sans-serif;
+    font-family: var(--font-secondary);
     font-weight: 700;
     font-size: 18px;
+    line-height: 117%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    line-height: 1.17;
     color: #4d5ae5;
-    display: inline-block;
+    display: block;
     margin-bottom: 16px;
 }
 
 .studio-bottom {
-    font-family: "Raleway", sans-serif;
+    font-family: var(--font-secondary);
     font-weight: 700;
     font-size: 18px;
+    line-height: 117%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    line-height: 1.17;
     color: #f4f4fd;
 }
 
@@ -872,16 +889,16 @@ li.advantages-list-item {
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.02em;
-    color: #ffffff;
+    color: #f4f4fd;
     max-width: 264px;
-}
-
-.footer-right {
-    margin-right: 80px;
 }
 
 .footer-social-title {
     font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #ffffff;
     margin-bottom: 16px;
     text-align: center;
 }
@@ -897,13 +914,13 @@ li.advantages-list-item {
 }
 
 .fsocial-link-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #4d5ae5;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -912,14 +929,17 @@ li.advantages-list-item {
     background-color: #31d0aa;
 }
 
+.footer-subscribe-news {
+    text-align: center;
+}
+
 .footer-subscribe-title {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.02em;
-    color: #fff;
+    color: #ffffff;
     margin-bottom: 16px;
-    text-align: center;
 }
 
 .footer-form {
@@ -930,44 +950,42 @@ li.advantages-list-item {
 }
 
 .footer-subscribe-area {
-    border: 1px solid #fff;
+    border: 1px solid #ffffff;
     border-radius: 4px;
     width: 288px;
     height: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     background-color: transparent;
     font-weight: 400;
     font-size: 12px;
     line-height: 200%;
     letter-spacing: 0.04em;
-    color: #fff;
-    outline: transparent;
+    color: #ffffff;
     padding-left: 16px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     opacity: 0.3;
+    outline: transparent;
 }
 
 .footer-subscribe-area:focus {
-    border-color: #4d5ae5;
     opacity: 1;
 }
 
 .button-subscribe-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 4px;
     padding: 8px 24px;
     min-width: 165px;
     height: 40px;
     background-color: #4d5ae5;
-    border-style: none;
-    cursor: pointer;
+    border: none;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.04em;
-    text-align: center;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -977,20 +995,26 @@ li.advantages-list-item {
 }
 
 .footer-icon-send {
-    fill: #fff;
     margin-left: 16px;
+    fill: #ffffff;
 }
 
 @media screen and (min-width: 768px) {
     .footer-container {
-        justify-content: flex-start;
         align-items: baseline;
+        justify-content: flex-start;
         gap: 72px 24px;
-        width: 584px;
+        max-width: 584px;
     }
 
-    .footer-left,
-    .footer-social-title,
+    .footer-left {
+        text-align: left;
+    }
+
+    .footer-social-title {
+        text-align: left;
+    }
+
     .footer-subscribe-title {
         text-align: left;
     }
@@ -1007,7 +1031,7 @@ li.advantages-list-item {
 @media screen and (min-width: 1158px) {
     .footer-container {
         gap: 0;
-        width: auto;
+        max-width: none;
     }
 
     .footer-left {
@@ -1051,15 +1075,15 @@ li.advantages-list-item {
     position: absolute;
     top: 50%;
     left: 50%;
-    border-radius: 4px;
     transform: translate(-50%, -50%);
     width: 288px;
     min-height: 623px;
-    padding: 72px 16px 24px;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-        0 1px 3px 0 rgba(0, 0, 0, 0.12),
-        0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 72px 16px 24px 16px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1099,18 +1123,16 @@ li.advantages-list-item {
 .modal-title {
     font-weight: 500;
     font-size: 16px;
-    line-height: 1.5;
-    text-align: center;
+    line-height: 150%;
     letter-spacing: 0.02em;
     color: #2e2f42;
+    text-align: center;
     margin-bottom: 16px;
 }
 
 .form {
+    display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
-    border-radius: 4px;
-    margin: auto;
 }
 
 .main-form-label-modal {
@@ -1118,17 +1140,33 @@ li.advantages-list-item {
 }
 
 .form-label-modal {
-    display: block;
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.17;
+    line-height: 117%;
     letter-spacing: 0.04em;
     color: #8e8f99;
     margin-bottom: 4px;
+    display: block;
 }
 
 .input-wrapper {
     position: relative;
+}
+
+.form-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:hover,
+.form-input:focus {
+    border-color: #4d5ae5;
 }
 
 .input-icon {
@@ -1139,62 +1177,39 @@ li.advantages-list-item {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input {
-    outline: transparent;
-    background-color: transparent;
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 4px;
-    width: 100%;
-    height: 40px;
-    padding-left: 38px;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-input:hover,
-.form-input:focus {
-    border-color: #4d5ae5;
-}
-
-.form-input:focus+.input-icon {
-    fill: #4d5ae5;
-}
-
 .input-wrapper:hover .input-icon,
 .input-wrapper:focus-within .input-icon {
     fill: #4d5ae5;
 }
 
+.input-textarea {
+    margin-bottom: 16px;
+}
+
 .form-textarea {
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
     height: 120px;
     font-weight: 400;
     font-size: 12px;
-    resize: none;
-    line-height: 1.17;
+    line-height: 117%;
     letter-spacing: 0.04em;
-    padding: 8px 16px;
-    background-color: transparent;
-    outline: transparent;
-    border-radius: 4px;
-    color: rgba(46, 47, 66, 0.4);
+    color: #434455;
     border: 1px solid rgba(46, 47, 66, 0.4);
-}
-
-.form-textarea:focus {
-    border-color: #4d5ae5;
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-textarea::placeholder {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
 }
 
-.input-textarea {
-    margin-bottom: 16px;
+.form-textarea:hover,
+.form-textarea:focus {
+    border-color: #4d5ae5;
 }
 
 .checkbox-container {
@@ -1202,58 +1217,54 @@ li.advantages-list-item {
 }
 
 .checkbox-title {
-    color: #8e8f99;
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.17;
+    line-height: 117%;
     letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #8e8f99;
 }
 
 .checkbox-icon {
-    display: inline-flex;
     width: 16px;
     height: 16px;
-    border-radius: 2px;
-    align-items: center;
     border: 1px solid rgba(46, 47, 66, 0.4);
-    justify-content: center;
-    fill: transparent;
-    margin-right: 8px;
+    border-radius: 2px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    margin-right: 8px;
 }
 
-.visually-hidden:checked+.checkbox-title>.checkbox-icon {
+.visually-hidden:checked+.checkbox-title .checkbox-icon {
     background-color: #404bbf;
-    fill: #f4f4fd;
     border: none;
+    fill: #f4f4fd;
 }
 
 .privacy-policy {
     color: #4d5ae5;
-    text-decoration: underline;
 }
 
 .button-form {
-    background-color: #4d5ae5;
-    color: #fff;
     display: block;
-    margin: 0 auto;
+    min-width: 169px;
+    height: 56px;
     font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    cursor: pointer;
     font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4d5ae5;
     border: none;
     border-radius: 4px;
+    margin: 0 auto;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    height: 56px;
-    min-width: 169px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .button-form:hover,
@@ -1265,7 +1276,7 @@ li.advantages-list-item {
     .modal {
         width: 408px;
         min-height: 584px;
-        padding: 72px 24px 0;
+        padding: 72px 24px 24px 24px;
     }
 }
 
