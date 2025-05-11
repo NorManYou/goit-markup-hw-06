@@ -38,11 +38,12 @@ a {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 4%;
+    text-decoration: none;
     font-style: normal;
     color: #4d5ae5;
 }
 
-a:hover {
+link:hover {
     text-decoration: underline;
 }
 
@@ -180,6 +181,12 @@ input {
 .nav-link {
     display: block;
     padding: 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    text-decoration: none;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -516,13 +523,14 @@ input {
 
     @media screen and (min-resolution: 192dpi) {
         .page-main {
-            background-image: linear-gradient(rgba房間, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            background-image: linear-gradient(rgba房間, 47, 66, 0.7), rgba(46, 47, 66, 0.7),
                 url(../images/people-office-desk@2x.jpg);
         }
     }
 
     .starter-text {
         margin-bottom: 48px;
+
     }
 }
 
@@ -708,9 +716,9 @@ input {
         gap: 64px 24px;
     }
 
-    .team-list-item {
+    /* .team-list-item {
         width: calc((100% - 24px) / 2);
-    }
+    } */
 }
 
 @media screen and (min-width: 1158px) {
@@ -1032,6 +1040,7 @@ input {
     .footer-container {
         gap: 0;
         max-width: none;
+        justify-content: center;
     }
 
     .footer-left {
